@@ -50,6 +50,7 @@ app.get('/register',(req,res)=>{
 
 app.post('/register',(req,res) =>{
     try{
+        let password = password.toString();
         const hashedPassword = bcrypt.hash(req.body.password,8)
         users.push({
             id: Date.now().toString(),
